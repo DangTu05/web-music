@@ -3,8 +3,9 @@ import cors from "cors";
 import router from "./routes/index.route";
 import { connect } from "./config/mongodb.config";
 import { errorHandlingMiddleware } from "./middlewares/errorHandling.middleware";
+import configViewEngine from "./config/viewEngine.config";
 const app: Express = express();
-const port: number = 3000;
+const port: number = 8080;
 const startServer = (): void => {
   /// Kết nối db
   connect();
@@ -14,6 +15,8 @@ const startServer = (): void => {
   /// Cors
   app.use(cors());
   /// Kết nối router
+  /// config viewEngine
+  configViewEngine(app);
   router(app);
   /// Middleware xử lý lỗi tập chung
   app.use(errorHandlingMiddleware);

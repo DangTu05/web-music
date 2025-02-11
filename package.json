@@ -12,11 +12,6 @@
     "dev": "cross-env BUILD_MODE=dev nodemon src/server.ts",
     "production": "npm run ts.check && npm run build && cross-env BUILD_MODE=prod node dist/server.js"
   },
-  "pre-commit": [
-    "ts.check",
-    "build",
-    "add-build"
-  ],
   "author": "",
   "license": "ISC",
   "dependencies": {

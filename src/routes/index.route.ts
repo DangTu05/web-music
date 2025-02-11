@@ -1,11 +1,6 @@
-import { Application, Request, Response } from "express";
-import Topic from "../models/topic.model";
+import { Application } from "express";
+import topicRouter from "./topic.route";
 function router(app: Application): void {
-  app.use("/", async (req: Request, res: Response) => {
-    const topics = await Topic.find({
-      deleted: false,
-    });
-    console.log(topics);
-  });
+  app.use("/", topicRouter);
 }
 export default router;
