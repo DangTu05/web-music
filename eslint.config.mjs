@@ -1,10 +1,10 @@
 import globals from "globals";
-import js from "@eslint/js";
+// import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
-  js.configs.recommended, // Cấu hình cho JavaScript
+  // js.configs.recommended, // Cấu hình cho JavaScript
   ...tseslint.configs.recommended, // Cấu hình cho TypeScript
   {
     files: ["**/*.{ts,tsx}"], // Chỉ áp dụng cho TypeScript
