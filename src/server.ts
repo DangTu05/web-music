@@ -1,4 +1,5 @@
 import express, { Express } from "express";
+import path from "path";
 import cors from "cors";
 import router from "./routes/index.route";
 import { connect } from "./config/mongodb.config";
@@ -9,6 +10,7 @@ const port: number = 8080;
 const startServer = (): void => {
   /// Kết nối db
   connect();
+  app.use(express.static(path.join(__dirname, "public")));
   // Sử dụng body-parser middleware
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
